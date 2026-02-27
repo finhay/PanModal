@@ -869,7 +869,7 @@ private extension PanModalPresentationController {
         // Set path as a mask to display optional drag indicator view & rounded corners
         let mask = CAShapeLayer()
         mask.path = path.cgPath
-        view.layer.mask = mask
+        view.layer.addSublayer(mask)
 
         if #available(iOS 19, *) {
             if let oldMask = view.layer.sublayers?.first(where: { $0.name == "panModalMask" }) {
